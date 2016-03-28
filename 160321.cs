@@ -160,6 +160,36 @@ public class ch02_01  {
         default:
             Console.WriteLine("F");
             break;
+            
+    // 배열
+            int[] am = new int[] {10, 20,  30, 40, 50};
+
+            for (int an = 0 ; an < am.Length; an++)
+                Console.WriteLine(am[an]);
+
+            // 5개의 a배열을 잡아서 값을 콘솔로 입력받아 저장하시오. [과제]
+            int[] ao = new int[5];
+            int sum = 0, max = -9999;
+            double avg = 0;
+            
+            for (int ap = 0; ap < ao.Length; ap++)
+            {
+                // 숫자를 입력받습니다.
+                Console.WriteLine("숫자를 입력해주세요.");
+                string aq_s = Console.ReadLine();
+                ao[ap] = int.Parse(aq_s);
+                
+                // 입력받은 숫자를 합계(int sum)에 더합니다.
+                sum += ao[ap];
+
+                // 입력받은 숫자와 최댓값을 비교하고, 입력받은 숫자가 크면 대입합니다.
+                if (ao[ap] > max)
+                    max = ao[ap];
+            }
+            Console.WriteLine("a[0] = " + ao[0] + ", a[1] = " + ao[1] + ", a[2] = " + ao[2] + ", a[3] = " + ao[3] + ", a[4] = " + ao[4]);
+            Console.WriteLine("합계\t= " + sum);
+            Console.WriteLine("평균\t= " + (double) sum / ao.Length);
+            Console.WriteLine("최댓값\t= " + max);
     }
   }
 }
